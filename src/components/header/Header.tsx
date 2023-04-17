@@ -1,25 +1,19 @@
 import { Link } from "react-router-dom";
+import logo from "../../assets/cabecalho.png";
+import { ContainerHeader } from "./HeaderStyle";
+import Hamburger from "./Hamburger";
+import { ImgLogo } from "./HeaderStyle";
 
-import logo from '../../assets/Logo-Nova-04.png';
-
-import { ContainerHeader, ImgLogo,} from './HeaderStyle';
-
-const Header:React.FC = () => {
-
+const Header: React.FC = (): JSX.Element => {
   return (
-  
     <ContainerHeader>
-      <Link 
-        to='/'
-      >
-        <ImgLogo
-          src={ logo } 
-          alt='logo'
-        />      
+      <Link to="/">
+        <ImgLogo src={logo} alt="logo" />
       </Link>
-      {/* <Hamburgue /> */}
+
+      <Hamburger />
     </ContainerHeader>
-  )
-}
+  );
+};
 
 export default Header;

@@ -1,14 +1,11 @@
-import { useState } from 'react'
-
-import './App.css'
-
-function Footer() {
+import { ContainerFooter } from './FooterStyle';
 
 
+const Footer:React.FC = (): JSX.Element =>  {
   return (
-    <footer className="footer">
-      <p>footer</p>
-    </footer>
+    <ContainerFooter>
+      <p>@Desenvolvido por Hebertt Nascimento</p>
+    </ContainerFooter>
   )
 }
 
