@@ -1,4 +1,4 @@
-
+const allClients: Array<Record<number, { id: number; name: string; code: string; date: Date; cpf: string }>> = [];
 
 class DataRegistry {
   private data: Record<number, { id: number; name: string; code: string; date: Date; cpf: string }> = {};
@@ -6,33 +6,48 @@ class DataRegistry {
 
   register(name: string, code: string, cpf: string): number | void {
 
-    this.counter++;
+   const counting =  allClients.length;
 
- 
+    console.log(counting);
+    this.counter += 1;
     const currentDate = new Date();
 
-    // Create an object to store the data
-     const  dataObj = {
-      id: this.counter,
+    
+    const dataObj = {
+      id: counting + this.counter,
       name: name,
-      code:code,
+      code: code,
       date: currentDate,
-      cpf:cpf
+      cpf: cpf
     };
-
-    // Add the data to the data object
+ 
+  
     this.data[this.counter] = dataObj;
 
-    // Return the ID for the registered data
-    console.log(dataObj);
+   
+    allClients.push(dataObj);
+    // console.log(allClients)
+    // console.log(this.counter)
+   
+    
+    const existingDataString = localStorage.getItem('allClientsData');
+    
+    const existingData = existingDataString ? JSON.parse(existingDataString) : [];
+    existingData.push(dataObj);
+    localStorage.setItem('allClientsData', JSON.stringify(existingData));
+    console.log(existingData);
+   
+
+    
+
+
     return this.counter;
   }
 
-  // getData() {
-  //   // Find the registered data with the given ID
+  getData(id: number) {
     
-  //   // return this.data[cpf];
-  // }
+    return this.data[id];
+  }
 }
 
 export default DataRegistry;

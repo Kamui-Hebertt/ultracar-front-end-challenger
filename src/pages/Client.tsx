@@ -46,7 +46,7 @@ const Client = () => {
     setCode(code);
     setSign(true);
     console.log(qrCode);
-    UserRegistry.register(name, qrCode, cpf);
+    UserRegistry.register(name, code, cpf);
    
     
    
