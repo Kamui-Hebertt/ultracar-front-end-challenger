@@ -50,8 +50,8 @@ const Product = () => {
               label="Preço"
               variant="outlined"
               fullWidth
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
             />
 
          
