@@ -65,7 +65,8 @@ export const Button = styled.input`
 `;
 
 export const SectionLogin = styled.section `
-
+border:1px solid black;
+gap:2rem;
 display:flex;
 height:35rem;
 width: 30rem;

@@ -1,10 +1,15 @@
 import { ContainerMain } from "../components/home/HomeStyles";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TextField from "@mui/material/TextField";
 import qrCode from "../assets/qrcode.png";
 import styled from "styled-components";
 import { ConatinerContact, SectionLogin } from "./LoginStyles";
 import { useNavigate } from "react-router-dom";
+
+
+
+
+
 
 const Login = () => {
   const [qrcodeORcpf, SetqrcodeORcpf] = useState<string>("");
@@ -13,7 +18,7 @@ const Login = () => {
 
   const loginFunc = (id:string) => {
     // verificação
-      navigate(`/login/${id}`)
+      navigate(`/login/${id}`);
 
   }
 

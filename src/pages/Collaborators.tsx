@@ -1,13 +1,94 @@
-
 import { ContainerMain } from "../components/home/HomeStyles";
+import React, { useState } from "react";
+import TextField from "@mui/material/TextField";
+import { ConatinerContact, SectionLogin } from "./LoginStyles";
 
+// import { costumers } from "../mocks/ClientsData";
+// import { IClientData } from "../intefaces/IClientData";
+// import DataRegistry from '../helpers/RegisterClient';
 
-const Collaborators:React.FC = () => {
-  return(
+const Collaborator = () => {
+  // const UserRegistry = new DataRegistry();
+
+  const [name, setName] = useState<string>("");
+  const [cpf, setCPF] = useState<string>("");
+
+  const [qrCode, setCode] = useState<string>("");
+  const [sign, setSign] = useState<boolean>(false);
+
+  const generateCode = () => {
+    const length = 15;
+    let code = "";
+    const chars =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * chars.length);
+      code += chars[randomIndex];
+    }
+    return code;
+  };
+
+  const submit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+ 
+
+    if (cpf.trim().length < 11) {
+      return alert("Cpf inválido, digite um formato válido");
+    }
+
+    if (!/^[0-9-]+$/.test(cpf)) {
+      return alert('Formato de cpf inválido, digite números com "-"');
+    }
+
+    let code = generateCode();
+    setCode(code);
+    setSign(true);
+    console.log(qrCode);
+    // UserRegistry.register(name, code, cpf);
+   
+    
+   
+
+  };
+  return (
     <ContainerMain>
-      <p>collaborators</p>
-    </ContainerMain>
-  )
-}
+      <ConatinerContact>
+        <h2>Seja bem Vindo!</h2>
 
-export default Collaborators;
+        <p>Preencha os campos para realizar o cadastro de colaborador</p>
+        <form onSubmit={submit}>
+          <SectionLogin>
+            <TextField
+              label="Nome"
+              variant="outlined"
+              fullWidth
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+
+            <TextField
+              label="CPF"
+              variant="outlined"
+              fullWidth
+              value={cpf}
+              onChange={(e) => setCPF(e.target.value)}
+            />
+
+         
+            <button type="submit">Cadastrar</button>
+
+            {!sign || (
+              <p>
+                Cadastro realizado com sucesso, seu codigo de QR code ou login é
+                : {qrCode}
+              </p>
+            )}
+          </SectionLogin>
+        </form>
+      </ConatinerContact>
+    </ContainerMain>
+  );
+};
+
+export default Collaborator;
