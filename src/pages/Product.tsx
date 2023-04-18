@@ -46,12 +46,12 @@ const Product = () => {
               onChange={(e) => setName(e.target.value)}
             />
 
-            <TextField
-              label="cadastre o valor do produto"
+              <TextField
+              label="Preço"
               variant="outlined"
-              
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
+              fullWidth
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
 
          

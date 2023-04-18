@@ -65,7 +65,7 @@ export const Button = styled.input`
 `;
 
 export const SectionLogin = styled.section `
-border:1px solid black;
+
 gap:2rem;
 display:flex;
 height:35rem;
@@ -75,7 +75,7 @@ flex-direction: column;
 align-items: center;
 
 button{
-  margin-top:3rem;
+    margin-top:3rem;
     display: flex;
     -webkit-box-pack: center;
     justify-content: center;
