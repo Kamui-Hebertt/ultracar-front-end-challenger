@@ -9,6 +9,9 @@ export const ContainerMain = styled.main`
   justify-content: center;
   border: 1px solid black;
   background-color: rgb(239, 243, 243);
+  p{
+    margin-top:3rem;
+  }
 `;
 
 export const SignUpBtn = styled.button`
