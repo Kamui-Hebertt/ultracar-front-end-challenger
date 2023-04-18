@@ -2,8 +2,13 @@ import { ContainerMain } from "../components/home/HomeStyles";
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import { ConatinerContact, SectionLogin } from "./LoginStyles";
+import { costumers } from "../mocks/ClientsData";
+import { IClientData } from "../intefaces/IClientData";
+import DataRegistry from '../helpers/RegisterClient';
 
 const Client = () => {
+  const UserRegistry = new DataRegistry();
+
   const [name, setName] = useState<string>("");
   const [cpf, setCPF] = useState<string>("");
   const [plate, setPlate] = useState<string>("");
@@ -33,26 +38,25 @@ const Client = () => {
       return alert("Cpf inválido, digite um formato válido");
     }
 
-     if (!/^[0-9-]+$/.test(cpf)) {
-    return alert('formato de cpf inválido, digite números com "-"');
-  }
+    if (!/^[0-9-]+$/.test(cpf)) {
+      return alert('Formato de cpf inválido, digite números com "-"');
+    }
 
     let code = generateCode();
     setCode(code);
     setSign(true);
     console.log(qrCode);
+    UserRegistry.register(name, qrCode, cpf);
+   
+    
+   
+
   };
   return (
     <ContainerMain>
-      {!sign || (
-        <p>
-          Cadastro realizado com sucesso, seu codigo de QR code ou login é :{" "}
-          {qrCode}
-        </p>
-      )}
-
       <ConatinerContact>
         <h2>Seja bem Vindo!</h2>
+
         <p>Preencha os campos para realizar o cadastro</p>
         <form onSubmit={submit}>
           <SectionLogin>
@@ -63,6 +67,7 @@ const Client = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
+
             <TextField
               label="CPF"
               variant="outlined"
@@ -70,6 +75,7 @@ const Client = () => {
               value={cpf}
               onChange={(e) => setCPF(e.target.value)}
             />
+
             <TextField
               label="Placa Do Veículo"
               variant="outlined"
@@ -79,6 +85,13 @@ const Client = () => {
             />
 
             <button type="submit">Cadastrar</button>
+
+            {!sign || (
+              <p>
+                Cadastro realizado com sucesso, seu codigo de QR code ou login é
+                : {qrCode}
+              </p>
+            )}
           </SectionLogin>
         </form>
       </ConatinerContact>

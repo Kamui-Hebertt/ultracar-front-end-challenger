@@ -1,12 +1,18 @@
 import styled from 'styled-components';
 
 export const ConatinerContact = styled.div`
+  
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin-bottom: 10rem;
   margin-top: 3rem;
+
+  h2 { 
+    margin-top: 1rem;
+  }
+
  
 `;
 
@@ -66,6 +72,7 @@ width: 30rem;
 justify-content: center;
 flex-direction: column;
 align-items: center;
+
 button{
   margin-top:3rem;
     display: flex;

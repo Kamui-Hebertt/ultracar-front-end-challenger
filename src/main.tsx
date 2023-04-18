@@ -9,6 +9,7 @@ import Client from "./pages/Client";
 import Collaborators from '../src/pages/Collaborators';
 import Product from '../src/pages/Product';
 import Login from "./pages/Login";
+import UserPage from "./pages/UserPage";
 
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <Route path="/product" element={<Product />} />
           <Route path="/collaborator" element={<Collaborators />} />
           <Route path="/login" element={<Login />} />
+          <Route path="login/:id" element={<UserPage />} />
         </Route>
       </Routes>
       </Provider1>
