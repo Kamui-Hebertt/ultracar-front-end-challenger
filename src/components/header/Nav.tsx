@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom";
 
+
 // import {  ConteinerLinks} from "./HeaderStyle";
 export const ContainerNav = styled.nav`
   align-items: center;
@@ -16,7 +17,7 @@ export const ContainerNav = styled.nav`
    text-align: center;
  
 
-    color:rgb(49, 45, 45);
+    color:rgb(240, 234, 234);
     text-decoration: none;
     &:hover{
       opacity:0.5;
