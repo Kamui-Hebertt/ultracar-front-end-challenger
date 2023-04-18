@@ -6,8 +6,9 @@ import App from "./App";
 import GlobalStyles from "./style/GlobalStyles";
 import Provider1 from './context/provider'
 import Client from "./pages/Client";
-import Collaborators from '../src/pages/collaborators';
+import Collaborators from '../src/pages/Collaborators';
 import Product from '../src/pages/Product';
+import Login from "./pages/Login";
 
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <Route path="/client" element={<Client />} />
           <Route path="/product" element={<Product />} />
           <Route path="/collaborator" element={<Collaborators />} />
+          <Route path="/login" element={<Login />} />
         </Route>
       </Routes>
       </Provider1>

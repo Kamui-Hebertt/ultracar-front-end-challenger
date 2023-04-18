@@ -21,7 +21,8 @@ export const SignUpBtn = styled.button`
     background-color: #337ab7;
     height:2rem;
     width:10rem;
-   
+    margin-top: 2rem;
+     
     &:hover{
       opacity:0.5;
       cursor:pointer;
@@ -30,6 +31,32 @@ export const SignUpBtn = styled.button`
   
 
 `;
+
+
+export const SignInBtn = styled.button`
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #fff;
+    background-color: #033158;
+    height:2rem;
+    width:10rem;
+   
+    
+    &:hover{
+      opacity:0.5;
+      cursor:pointer;
+    } 
+    box-shadow: 1px black;
+  
+
+`;
+
+
+
+
 
 
 export const TextPhrase = styled.p `

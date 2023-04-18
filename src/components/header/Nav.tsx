@@ -56,12 +56,13 @@ export const ContainerNav = styled.nav`
 `;
 
 export const DivCenter = styled.div `
-margin-left: -39rem;
+margin-left: -14rem;
 display:flex;
+font-weight: 900;
 
 justify-content: center;
-border:1px solid black;
-@media (max-width: 700px){
+
+@media (max-width: 900px){
   display:none;
 }
 

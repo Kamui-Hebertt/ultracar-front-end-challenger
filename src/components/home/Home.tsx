@@ -1,4 +1,4 @@
-import { ContainerMain, SignUpBtn, TextPhrase, DivSet } from "./HomeStyles"
+import { ContainerMain, SignUpBtn, TextPhrase, DivSet, SignInBtn } from "./HomeStyles"
 import mainPhoto from "../../assets/logo_ultracar_slogan_front.png";
 import { MainLogo } from '../header/HeaderStyle';
 
@@ -13,6 +13,13 @@ const Home:React.FC = () => {
     historyN('/client');
   };
 
+   const handleButtonClickLogin = () => {
+  
+    historyN('/login');
+  };
+
+ 
+
   return(
     <ContainerMain>
       
@@ -20,6 +27,7 @@ const Home:React.FC = () => {
       <DivSet>
       <TextPhrase> Administre sua oficina pelo Ultracarweb
         de forma fácil e faça ela dar lucro.</TextPhrase>
+      <SignInBtn onClick={handleButtonClickLogin}>Acesse sua conta</SignInBtn>
       <SignUpBtn onClick={handleButtonClick}>Cadastrar</SignUpBtn>
       </DivSet>
     </ContainerMain>
