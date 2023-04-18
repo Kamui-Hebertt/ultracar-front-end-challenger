@@ -1,16 +1,22 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom";
 
-
+// import {  ConteinerLinks} from "./HeaderStyle";
 export const ContainerNav = styled.nav`
   align-items: center;
-  max-width: 60%;
-  width: 100%;
-  margin-right: 2rem;
+  
+   font-family: "Poppins";
+  max-width: 40rem;
+  width: 20rem;
+
+/* justify-content: space-between; */
+
   display: flex;
-  justify-content: space-around;
   a {
-    color:rgb(250,250,250);
+   text-align: center;
+ 
+
+    color:rgb(49, 45, 45);
     text-decoration: none;
     &:hover{
       opacity:0.5;
@@ -19,6 +25,8 @@ export const ContainerNav = styled.nav`
 
 
   @media (max-width: 550px){
+
+
     max-width: 100%;    
     flex-flow: column nowrap;
     background-color: rgb(23, 34 ,46);
@@ -39,19 +47,42 @@ export const ContainerNav = styled.nav`
       &:hover{
         opacity:0.5;
       }
+
+      
     }
+
+    
   }
 `;
 
+export const DivCenter = styled.div `
+margin-left: -39rem;
+display:flex;
+
+justify-content: center;
+border:1px solid black;
+@media (max-width: 700px){
+  display:none;
+}
+
+`
 
 
 const Nav = ({ open } : {open:boolean}) => {
   return (
     <ContainerNav open={ open }>
-     
+  
+       
+        <Link  to='/login'>
+           <DivCenter>
+            Login
+          </DivCenter>  
+        </Link>
 
         <Link  to='/client'>
+      
           Cadastrar cliente
+         
         </Link>
 
         <Link  to='/product'>
@@ -60,9 +91,12 @@ const Nav = ({ open } : {open:boolean}) => {
 
 
         <Link 
-          to='/colaborator'>
+          to='/collaborator'>
         Cadastrar colaborador
-        </Link>     
+        </Link> 
+       
+   
+
     </ContainerNav>
   )
 }

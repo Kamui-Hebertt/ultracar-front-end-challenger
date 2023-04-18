@@ -4,7 +4,7 @@ import provider from '../../context/context';
 import Nav from './Nav';
 
 const ConatinerHamburgue = styled.div`
-  width: rem;
+
   height: 2rem;
   margin-right: 2rem;  
   z-index: 20;
@@ -16,6 +16,7 @@ const ConatinerHamburgue = styled.div`
   }
   div{
     width: 2rem;
+    
     height: 0.25rem;
     background-color: ${(({ open } : {open:boolean}) => open ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 1)')};
     transform-origin: 1px;
